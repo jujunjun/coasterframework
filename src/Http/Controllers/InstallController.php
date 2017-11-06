@@ -4,7 +4,7 @@ use Artisan;
 use Carbon\Carbon;
 use CoasterCms\Helpers\Admin\Routes;
 use CoasterCms\Helpers\Cms\File\File;
-use CoasterCms\Helpers\Cms\Install;
+use CoasterCms\Facades\Install;
 use CoasterCms\Libraries\Builder\FormMessage;
 use CoasterCms\Models\Setting;
 use CoasterCms\Models\Theme;

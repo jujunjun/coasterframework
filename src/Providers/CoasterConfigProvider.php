@@ -35,9 +35,9 @@ class CoasterConfigProvider extends ServiceProvider
 
         $configFile = __DIR__ . '/../../config';
         $useDatabaseSettings = $db;
-        
+
         event(new LoadConfig($configFile, $useDatabaseSettings));
-        
+
         Setting::loadAll($configFile, 'coaster', $useDatabaseSettings);
 
         $updatedAppName = (config('app.name') == 'Coaster CMS' && config('coaster::site.name')) ? config('coaster::site.name') : config('app.name');
@@ -58,7 +58,7 @@ class CoasterConfigProvider extends ServiceProvider
         foreach ($overrideConfigValues as $attribute => $value) {
             app()->config->set($attribute, $value);
         }
-        
+
         if (Install::isComplete()) {
             if (!$db) {
                 abort(503, 'Database error, settings table could not be found');

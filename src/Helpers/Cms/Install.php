@@ -1,6 +1,7 @@
 <?php namespace CoasterCms\Helpers\Cms;
 
 use File;
+use Illuminate\Support\Facades\Storage;
 use Route;
 
 class Install
@@ -20,7 +21,7 @@ class Install
     public static function setInstallState($state = '')
     {
         $filePath = self::_getFilePath();
-        if (!File::exists($filePath)) {
+        if (!Storage::disk('local')->assertExists($filePath)) {
             $dir = pathinfo($filePath, PATHINFO_DIRNAME);
             if (!File::exists($dir)) {
                 File::makeDirectory($dir);
@@ -28,10 +29,10 @@ class Install
             $state = $state ?: 'coaster.install.permissions';
         }
         if ($state) {
-            File::put($filePath, $state);
+            Storage::disk('local')->put($filePath, $state);
             static::$_loadedState = static::$_loadedState ?: $state;
         } else {
-            static::$_loadedState = File::get($filePath);
+            static::$_loadedState = Storage::disk('local')->get($filePath);
         }
     }
 
@@ -51,7 +52,7 @@ class Install
 
     protected static function _getFilePath()
     {
-        return storage_path(config('coaster::site.storage_path')) . '/install.txt';
+        return config('coaster::site.storage_path') . '/install.txt';
     }
 
 }
