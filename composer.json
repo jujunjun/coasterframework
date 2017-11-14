@@ -1,21 +1,11 @@
 {
-    "name": "web-feet/coasterframework",
-    "description": "Coaster CMS Framework",
+    "name": "jujunjun/jxframework",
+    "description": "Juxiang CMS Framework",
     "license": "GPLv3",
-    "authors": [
-        {
-            "name": "Neil Jennings",
-            "email": "neil@web-feet.co.uk"
-        },
-        {
-            "name": "Daniel Chadwick",
-            "email": "dan@web-feet.co.uk"
-        }
-    ],
     "repositories" : [
         {
             "type": "git",
-            "url": "https://github.com/Web-Feet/html"
+            "url": "https://github.com/jujunjun"
         }
     ],
     "require": {
