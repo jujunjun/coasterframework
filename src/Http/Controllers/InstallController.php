@@ -202,7 +202,7 @@ class InstallController extends Controller
             $this->layoutData['content'] = View::make('coaster::pages.install', ['stage' => 'envCheck', 'unMatchedEnvVars' => $unMatchedEnvVars]);
 
         } else {
-            Artisan::call('migrate', ['--path' => '/vendor/web-feet/coasterframework/database/migrations']);
+            Artisan::call('migrate', ['--path' => '/vendor/jujunjun/jxframework/database/migrations']);
 
             Install::setInstallState('coaster.install.admin');
 
