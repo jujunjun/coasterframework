@@ -163,7 +163,7 @@ class Block extends Eloquent
     {
         if (!static::_preloadIsset('blockClass') || $reload) {
             $paths = [
-                'CoasterCms\\Libraries\\Blocks\\' => base_path('vendor/web-feet/coasterframework/src/Libraries/Blocks'),
+                'CoasterCms\\Libraries\\Blocks\\' => base_path('vendor/jujunjun/jxframework/src/Libraries/Blocks'),
                 'App\\Blocks\\' => base_path('app/Blocks')
             ];
 
