@@ -2,7 +2,7 @@
 
 return [
 
-    'view' => '/vendor/web-feet/coasterframework/resources/views/frontend',
+    'view' => '/vendor/jujunjun/jxframework/resources/views/frontend',
     'croppa_handle' => 'coaster.*|uploads.*|themes.*',
     'bootstrap_version' => '3', // for pagination (supports 3 or 4)
     'strong_tags' => '0',
